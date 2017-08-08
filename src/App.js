@@ -26,10 +26,12 @@ class App extends Component {
         <div className="todo-index">
           <ListHeader header="Mis Tareas" />
           <div>
+            <CreateItem />
             <ListBody
               todos={this.state.todos}
               toggleCompleted={id => this.toggleCompleted(id)} //es lo mismo que this.toggleCompleted.bind(this)
             />
+            
           </div>
         </div>
       </div>
@@ -101,6 +103,36 @@ class Item extends Component {
 
   }
 }
+
+class CreateItem extends Component {
+
+  _handleSubmit(event) {
+  event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="row">
+        <div className="col-md-6 col-md-offset-3">
+          <form className="form-group todo-form" onSubmit={this._handleSubmit.bind(this)}>
+            <label>Crear Nueva actividad</label>
+            <div className="todo-form-fields">
+              <input className="form-control form-input" placeholder="Título" />
+              <textarea className="form-control form-input" placeholder="Descripción"></textarea>
+            </div>
+            <div className="todo-form-actions">
+              <button className="btn btn-default" type="submit">
+                Crear actividad
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    )
+  }
+}
+
+
 
 export default App;
 

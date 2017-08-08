@@ -122,3 +122,7 @@ body {
 .btn-active {
 color: grey;
 }
+
+.form-input {
+  border-radius: 0;
+}
