@@ -33,7 +33,6 @@ body {
 
 .list-header h1 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: lighter; 
   font-size: 40px;
   font-weight: 300;
   color: whitesmoke;
@@ -123,6 +122,127 @@ body {
 color: grey;
 }
 
+.todo-form-box {
+  background-color: #0eb2b2;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: white;
+  padding: 10px;
+}
+
+.todo-form-box .form-control {
+  font-size: 18px;
+  border: none;
+}
+
+.todo-form {
+  max-width: 500px;
+}
+
 .form-input {
   border-radius: 0;
+  margin-bottom: 10px;
+}
+
+.btn-submit {
+  border-radius: 0;
+  background-color: #0f7af4;
+  border: none;
+}
+
+.list-body-btn-container {
+  margin: 10px;
+  position: absolute;
+  top: -60px;
+  right: 30px;
+}
+
+
+.btn-new-item {
+  background-color: #27bb57 !important;
+  background-image: none;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  outline: none !important;
+}
+
+.btn-new-item:hover {
+  border: 2px;
+  border: 2px solid white;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-new-item:active {
+  color: white;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  vertical-align: center;
+}
+
+.btn-new-item:focus {
+  color: white;
+}
+
+.modal-content {
+  background-color: #0eb2b2;
+  border-radius: 0;
+}
+
+.modal-content h4 {
+  color: white !important;
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.modal-header {
+  border-bottom: none;
+  border-radius: 0 !important;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-footer .btn {
+  border-radius: 0px;
+  background-image: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.btn-modal-close {
+  background-color: #91b7c3;
+  color: white;
+  border: none;
+  text-shadow: none;
+
+}
+
+.modal-content .close {
+  color: white;
+  text-shadow: none;
+  font-weight: 300;
+  font-size: 36px;
+  opacity: 1;
+}
+
+.fade-scale {
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.fade-scale.in {
+  opacity: 1;
+  transform: scale(1);
 }
