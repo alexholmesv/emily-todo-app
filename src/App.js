@@ -15,9 +15,13 @@ class App extends Component {
       title: '',
       content: '',
     },
-    isComplete: false,
     visibilityFilter: "all",
     showModal: false,
+  }
+
+  handleVisibilityFilter(filter) {
+    const filters = ["all", "complete", "incomplete"]
+    filters.indexOf(filter) != -1 && this.setState({visibilityFilter: filter})
   }
 
   toggleCompleted(id) {
@@ -48,10 +52,15 @@ class App extends Component {
       <div className="container">
         <div className="todo-index">
           <ListHeader header="Mis Tareas" />
+          <Button onClick={()=>this.handleVisibilityFilter("all")}>Mostrar todos</Button>
+          <Button onClick={()=>this.handleVisibilityFilter("complete")}>Completos</Button>
+          <Button onClick={()=>this.handleVisibilityFilter("incomplete")}>Incompletos</Button>
           <div>
 
             <ListBody
-              todos={this.state.todos}
+              todos={this.state.todos.filter( (x) => this.state.visibilityFilter == "all" ? true 
+              : this.state.visibilityFilter == "complete" ? x.isComplete : !x.isComplete 
+               )}
               toggleCompleted={id => this.toggleCompleted(id)} //es lo mismo que this.toggleCompleted.bind(this)
               newItem={this._callNewItem.bind(this)}
             />
